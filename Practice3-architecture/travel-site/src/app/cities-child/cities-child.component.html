@@ -1,0 +1,9 @@
+<div class="cities-gallery">
+  <div *ngFor="let city of cities" class="city-card">
+    <img [src]="city.image" alt="{{ city.name }}" class="city-image" />
+    <div class="city-info">
+      <h3>{{ city.name }}</h3>
+      <p>{{ city.description }}</p>
+    </div>
+  </div>
+</div>

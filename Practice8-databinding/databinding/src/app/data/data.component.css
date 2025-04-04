@@ -1,0 +1,29 @@
+.main {
+  font-family: "Times New Roman", Times, serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  overflow-y: auto;
+}
+.heading {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 40px;
+  text-align: center;
+}
+.name-style {
+  margin-top: 10px;
+}
+button {
+  font-size: 15px;
+  background-color: rgb(18, 18, 165);
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: rgb(7, 7, 110);
+}

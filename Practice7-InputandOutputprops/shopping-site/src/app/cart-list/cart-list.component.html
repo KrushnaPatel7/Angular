@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Shopping Cart</h1>
+
+  <app-cart-add (addProduct)="onAddProduct($event)"></app-cart-add>
+
+  <h3>Your Cart</h3>
+  <ul>
+    <li *ngFor="let item of cartItems">
+      {{ item.name }} - {{ item.quantity }} x Rs {{ item.price }} = Rs
+      {{ item.quantity * item.price }}
+    </li>
+  </ul>
+
+  <div class="total">
+    <strong>Total: Rs {{ getTotalPrice() }}</strong>
+  </div>
+  <br />
+  <br />
+  <button (click)="clearCart()">Clear Cart</button>
+</div>

@@ -1,0 +1,11 @@
+.travel-container {
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #333;
+}

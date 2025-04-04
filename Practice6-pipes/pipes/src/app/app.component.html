@@ -1,0 +1,16 @@
+<div style="text-align: center">
+  <h1>Welcome to Angular Pipes Demo!</h1>
+
+  <h3>Date formatted with built-in 'date' pipe:</h3>
+  <p>{{ today | date : "fullDate" }}</p>
+  <p>{{ today | date : "shortDate" }}</p>
+  <h3>Date formatted without built-in 'date' pipe:</h3>
+  <p>{{ today }}</p>
+
+  <h3>Amount formatted with built-in 'currency' pipe:</h3>
+  <p>{{ amount | currency : "INR" }}</p>
+
+  <h3>Text transformed with built-in 'uppercase' pipe:</h3>
+  <p>{{ "angular pipes" | uppercase }}</p>
+</div>
+ 

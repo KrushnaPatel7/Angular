@@ -1,0 +1,13 @@
+<div class="add-to-cart">
+  <h3>Add Product to Cart</h3>
+  <select [(ngModel)]="productName">
+    <option value="" disabled>Select a product</option>
+    <option *ngFor="let product of products" [value]="product.name">
+      {{ product.name }} - Rs {{ product.price }}
+    </option>
+  </select>
+
+  <input [(ngModel)]="quantity" type="number" min="1" placeholder="Quantity" />
+
+  <button (click)="addToCart()">Add to Cart</button>
+</div>

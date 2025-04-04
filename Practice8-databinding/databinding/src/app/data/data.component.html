@@ -1,0 +1,14 @@
+<div class="main">
+  <h1 class="heading">{{ title }}</h1>
+
+  <img [src]="imageUrl" alt="Delhi,India." width="300" height="200" />
+  <br />
+  <div class="name-style">
+    <label for="nameInput">First Name:</label>
+    <input id="nameInput" [(ngModel)]="name" placeholder="Enter your Name" />
+    <p>Hello,{{ name }} !</p>
+  </div>
+  <p [style.color]="color">This text will have dynamic colour.</p>
+  <button (click)="increment()">Increment count</button>
+  <p *ngIf="count > 2">Count is greater than 2</p>
+</div>
