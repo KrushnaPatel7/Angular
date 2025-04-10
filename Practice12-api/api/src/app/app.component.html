@@ -1,0 +1,36 @@
+<div class="container">
+  <h1 class="title">Product List</h1>
+
+  <div *ngIf="loading" class="loading">Loading products...</div>
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+    <button class="close-btn" (click)="closeError()">x</button>
+  </div>
+
+  <div
+    *ngIf="!loading && !errorMessage && products.length > 0"
+    class="product-list"
+  >
+    <div *ngFor="let product of products" class="product-card">
+      <img
+        [src]="product.photo_url"
+        alt="{{ product.name }}"
+        class="product-image"
+      />
+      <div class="product-info">
+        <h3 class="product-name">{{ product.name }}</h3>
+        <p class="product-description">{{ product.description }}</p>
+        <p class="product-price">
+          <strong>Price:</strong> Rs {{ product.price }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div
+    *ngIf="!loading && !errorMessage && products.length === 0"
+    class="no-products"
+  >
+    No products found.
+  </div>
+</div>

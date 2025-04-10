@@ -1,0 +1,16 @@
+<h1>Electronics Site</h1>
+<div class="container">
+  <p>
+    Purchase electronics from our site for the best prices and exclusive
+    discounts. We offer a wide range of top-quality products to meet your needs,
+    all at unbeatable prices. Take advantage of our ongoing sales and special
+    offers, and enjoy fast, reliable shipping on all orders!
+  </p>
+
+  <ul>
+    <li *ngFor="let product of products">
+      <!-- <a [routerLink]="['/product', product.id]">{{ product.name }}</a> -->
+      <a (click)="redirectTo(product.id)"> {{ product.name }}</a>
+    </li>
+  </ul>
+</div>

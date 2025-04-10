@@ -1,0 +1,112 @@
+<div class="form-container">
+  <h2>Registration Form</h2>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div formArrayName="people">
+      <div
+        *ngFor="let person of people.controls; let i = index"
+        [formGroupName]="i"
+        class="person-form"
+      >
+        <h3>Person {{ i + 1 }}</h3>
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" formControlName="name" type="text" />
+          <div *ngIf="person.get('name')!.touched">
+            <small *ngIf="person.get('name')!.invalid">
+              <span *ngIf="person.get('name')!.hasError('required')">
+                Name is required.
+              </span>
+              <span *ngIf="person.get('name')!.hasError('minlength')">
+                Name must be at least 3 characters long.
+              </span>
+            </small>
+          </div>
+        </div>
+
+        <div *ngIf="i === 0" class="form-group">
+          <label for="email">Email</label>
+          <input
+            id="email"
+            formControlName="email"
+            type="email"
+            pattern="^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$"
+          />
+          <div *ngIf="person.get('email')!.touched">
+            <small *ngIf="person.get('email')!.invalid">
+              <span *ngIf="person.get('email')!.hasError('required')">
+                Email is required.
+              </span>
+              <span *ngIf="person.get('email')!.hasError('pattern')">
+                Email is incorrect. Please use a valid format (e.g.,
+                example@domain.com).
+              </span>
+            </small>
+          </div>
+        </div>
+
+        <div *ngIf="i === 0" class="form-group">
+          <label for="password">Password</label>
+          <input id="password" formControlName="password" type="password" />
+          <div *ngIf="person.get('password')!.touched">
+            <small *ngIf="person.get('password')!.invalid">
+              <span *ngIf="person.get('password')!.hasError('required')">
+                Password is required.
+              </span>
+              <span *ngIf="person.get('password')!.hasError('minlength')">
+                Password must be at least 6 characters long.
+              </span>
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Gender</label>
+          <div class="gender-options">
+            <label>
+              <input type="radio" formControlName="gender" value="male" /> Male
+            </label>
+            <label>
+              <input type="radio" formControlName="gender" value="female" />
+              Female
+            </label>
+          </div>
+          <div
+            *ngIf="
+              person.get('gender')!.invalid && person.get('gender')!.touched
+            "
+          >
+            <small *ngIf="person.get('gender')!.hasError('required')">
+              Gender is required.
+            </small>
+          </div>
+        </div>
+
+        <button type="button" (click)="removePerson(i)" *ngIf="i > 0">
+          Remove Person
+        </button>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>
+        <input type="checkbox" formControlName="terms" /> I agree to the terms
+        and conditions
+      </label>
+      <div
+        *ngIf="userForm.get('terms')!.invalid && userForm.get('terms')!.touched"
+      >
+        <small *ngIf="userForm.get('terms')!.hasError('requiredTrue')">
+          You must accept the terms and conditions.
+        </small>
+      </div>
+    </div>
+
+    <div class="button-group">
+      <button type="button" (click)="addPerson()">Add Person</button>
+      <button type="button" (click)="onSubmit()" [disabled]="userForm.invalid">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
