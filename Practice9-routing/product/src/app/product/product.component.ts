@@ -2,18 +2,16 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../product.service';
 import { Subscription } from 'rxjs';
-
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css'],
-  standalone:true,
 })
-
 export class ProductComponent implements OnInit, OnDestroy {
   productId!: number;
   product: any;
   imageurl!: string;
+  val: any;
   private paramMapSubscription!: Subscription;
 
   constructor(
@@ -52,5 +50,6 @@ export class ProductComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy(): void {
     console.log('ProductComponent Destroyed');
+    console.log('Value of val:', this.val);
   }
 }

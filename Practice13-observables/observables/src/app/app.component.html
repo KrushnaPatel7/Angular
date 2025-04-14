@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Observable Example - Array Data</h1>
+  <button (click)="startObservable()">Start Getting Data</button>
+  <br />
+  <h2>Observable Data</h2>
+  <div class="data-row">
+    <div *ngFor="let item of dataArray">
+      <p>{{ item }}</p>
+    </div>
+  </div>
+
+  <h2>Merge two Observable Data</h2>
+  <button (click)="useMerge()">merge</button>
+  <div class="data-row">
+    <div *ngFor="let item of dataArraymerge">
+      <p>{{ item }}</p>
+    </div>
+  </div>
+
+  <h2>Using Mergemap</h2>
+  <button (click)="useMergemap()">mergemap</button>
+  <div class="data-row">
+    <div *ngFor="let item of arr">
+      <p>{{ item }}</p>
+    </div>
+  </div>
+</div>

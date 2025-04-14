@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
+  val: any = 10;
   products = [
     { id: 1, name: 'Laptops' },
     { id: 2, name: 'Headphones' },

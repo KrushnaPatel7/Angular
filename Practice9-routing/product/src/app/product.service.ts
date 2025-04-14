@@ -30,8 +30,9 @@ export class ProductService {
         'https://www.sencor.com/Sencor/media/content/Products/SLE32S700TCS-2.jpg',
     },
   ];
-
+ // val: any = 10;
   getProductById(id: number) {
     return this.products.find((product) => product.id === id);
   }
 }
+

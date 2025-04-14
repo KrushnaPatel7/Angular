@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Operators</h1>
+  <h2>Array Data</h2>
+  <button (click)="startObservable()">DistinctUntilChanged</button>
+  <div class="data-row">
+    <div *ngFor="let item of emittedValues">
+      <p>{{ item }}</p>
+    </div>
+  </div>
+</div>
