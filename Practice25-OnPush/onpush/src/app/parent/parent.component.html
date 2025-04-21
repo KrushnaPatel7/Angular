@@ -1,0 +1,6 @@
+<h2>Parent Component</h2>
+<p>Message: {{ dataFromParent.message }}</p>
+
+<button (click)="updateData()">Update Data</button>
+
+<app-child [data]="dataFromParent"></app-child>
